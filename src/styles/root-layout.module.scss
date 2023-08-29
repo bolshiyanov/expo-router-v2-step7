@@ -16,6 +16,8 @@ $ui-sidebar: 244px;
     margin-top: 12px;
     padding-bottom: 23px;
     height: 96px;
+    
+    
   }
   @media (min-width: $size-l) {
     width: 40%;
@@ -68,6 +70,7 @@ $ui-sidebar: 244px;
   display: none;
   @media (min-width: $size-xs) {
     display: flex;
+    
   }
   @media (min-width: $size-l) {
     min-width: $ui-sidebar;
@@ -86,5 +89,6 @@ $ui-sidebar: 244px;
 .sideBarHeader {
   @media (max-width: $size-l) {
     align-items: center;
+    
   }
 }

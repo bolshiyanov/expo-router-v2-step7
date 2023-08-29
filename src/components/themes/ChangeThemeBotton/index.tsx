@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "@/components/utils/hooks/redux";
 import { themeChangeAction } from "@/store/reducers/ThemeSlice";
+import Colors from '../../../constants/Colors'; 
 
 import {
   StyleSheet,
@@ -14,6 +15,7 @@ import { TabBarIcon } from "@/components/tab-bar-icon";
 const ChangeThemeButton = () => {
   const dispatch = useAppDispatch();
   const theme = useAppSelector(state => state.themeSlice.theme);
+  const selectedTheme = theme === 'dark' ? Colors.dark : Colors.light;
 
   useEffect(() => {
     if (Platform.OS === "web") {
@@ -46,7 +48,7 @@ const ChangeThemeButton = () => {
       <Pressable onPress={toggleTheme}>
         {({ pressed, hovered }) => (
           <TabBarIcon
-            color={theme === "dark" ? "blue" : "black"}
+            color={selectedTheme.iconColors }
             style={[
               {
                 paddingHorizontal: 8,

@@ -12,7 +12,7 @@ export default function Page() {
       <View style={[styles.container, { backgroundColor: selectedTheme.background }]}>
         <View style={styles.main}>
           <Text style={[styles.title, { color: selectedTheme.text }]}>Home</Text>
-          <Text style={[styles.subtitle, { color: selectedTheme.text }]}>
+          <Text style={[styles.subtitle, { color: selectedTheme.subTitle }]}>
             It is {Platform.OS} and my theme is {theme}
           </Text>
         </View>

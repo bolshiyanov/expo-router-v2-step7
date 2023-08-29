@@ -1,14 +1,17 @@
 import { useAppSelector } from "@/components/utils/hooks/redux";
 import { Platform, StyleSheet, Text, View } from "react-native";
+import Colors from '../constants/Colors'; 
 
 export default function Page() {
   const theme = useAppSelector(state => state.themeSlice.theme);
+  const selectedTheme = theme === 'dark' ? Colors.dark : Colors.light;
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { backgroundColor: selectedTheme.background }]}>
       <View style={styles.main}>
-        <Text style={styles.title}>SignIn SignUp</Text>
-        <Text style={styles.subtitle}>It is {Platform.OS} and mi theme is {theme} </Text>
+        <Text style={[styles.title, { color: selectedTheme.text }]}>SignIn SignUp</Text>
+        <Text style={[styles.subtitle, { color: selectedTheme.subTitle }]}>
+          It is {Platform.OS} and mi theme is {theme} </Text>
       </View>
     </View>
   );

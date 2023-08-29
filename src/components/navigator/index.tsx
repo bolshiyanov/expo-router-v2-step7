@@ -10,19 +10,23 @@ import {
   useWindowDimensions,
   View,
   ViewStyle,
-  useColorScheme,
 } from "react-native";
+
+import { useAppSelector } from "@/components/utils/hooks/redux";
 
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { cns } from "../utils/cns";
 
+import Colors from '../../constants/Colors'; 
 import cssStyles from "@/styles/root-layout.module.scss";
 
 function HeaderLogo() {
   const isLargeHorizontal = useWidth(980);
   const isSmallHorizontal = useWidth(768);
-const colorScheme = useColorScheme();
-console.log(' colorScheme navigator', colorScheme )
+
+  const theme = useAppSelector(state => state.themeSlice.theme);
+  const selectedTheme = theme === 'dark' ? Colors.dark : Colors.light;
+
   return (
     <Link
       style={[
@@ -35,6 +39,7 @@ console.log(' colorScheme navigator', colorScheme )
               marginTop: 12,
               paddingBottom: 23,
               height: 96,
+              
             },
           web: cns(cssStyles.headerLink),
         }),
@@ -58,7 +63,7 @@ console.log(' colorScheme navigator', colorScheme )
                 web: cns(cssStyles.wideVisible),
               })}
               name="logo"
-              fill={Colors.dark}
+              fill={selectedTheme.iconColors}
             />
             <Icon
               style={Platform.select({
@@ -66,7 +71,7 @@ console.log(' colorScheme navigator', colorScheme )
                 web: cns(cssStyles.wideHidden),
               })}
               name="logo-small"
-              fill={Colors.dark}
+              fill={selectedTheme.iconColors}
             />
           </Text>
         )}
@@ -89,6 +94,11 @@ function useWidth(size) {
 function SideBar({ visible }) {
   const isLarge = useWidth(980);
 
+  const theme = useAppSelector(state => state.themeSlice.theme);
+  const selectedTheme = theme === 'dark' ? Colors.dark : Colors.light;
+
+  
+
   return (
     <View
       style={[
@@ -101,6 +111,7 @@ function SideBar({ visible }) {
             },
             isLarge && {
               minWidth: NAV_MEDIUM_WIDTH,
+              
             },
           ],
 
@@ -109,21 +120,24 @@ function SideBar({ visible }) {
       ]}
     >
       <View
-        style={[
-          jsStyles.sidebarInner,
-          ...Platform.select({
-            default: [
-              isLarge &&
-                ({
-                  width: NAV_MEDIUM_WIDTH,
-                  minWidth: NAV_MEDIUM_WIDTH,
-                  alignItems: "flex-start",
-                } as const),
-            ],
-            web: [cns(cssStyles.sideBarInner)],
-          }),
-        ]}
-      >
+  style={[
+    jsStyles.sidebarInner,
+    ...Platform.select({
+      default: [
+        isLarge &&
+          ({
+            width: NAV_MEDIUM_WIDTH,
+            minWidth: NAV_MEDIUM_WIDTH,
+            alignItems: "flex-start",
+          } as const),
+      ],
+      web: [cns(cssStyles.sideBarInner)],
+    }),
+    { backgroundColor: selectedTheme.backgroundNav },
+    { borderRightColor: selectedTheme.borderLine } // Add the background color here
+  ]}
+>
+      
         <View
           style={[
             jsStyles.sidebarInner2,
@@ -133,11 +147,12 @@ function SideBar({ visible }) {
               },
               web: cns(cssStyles.sideBarHeader),
             }),
+            { borderRightColor: selectedTheme.borderLine }
           ]}
         >
           <HeaderLogo />
 
-          <View style={{ gap: 4, flex: 1 }}>
+          <View style={{ gap: 4, flex: 1 , }}>
             <SideBarTabItem name="index" icon={makeIcon("home") }>
               Home
             </SideBarTabItem>
@@ -161,6 +176,11 @@ function SideBar({ visible }) {
 }
 
 function TabBar({ visible }) {
+
+  const theme = useAppSelector(state => state.themeSlice.theme);
+  const selectedTheme = theme === 'dark' ? Colors.dark : Colors.light;
+
+
   return (
     <View
       style={[
@@ -173,9 +193,10 @@ function TabBar({ visible }) {
           },
           web: cns(cssStyles.smallVisible),
         }),
+        { backgroundColor: selectedTheme.backgroundNav }
       ]}
     >
-      <View style={jsStyles.nav}>
+      <View style={[jsStyles.nav, { borderTopColor: selectedTheme.borderLine }]}>
         {[
           { name: "index", id: "index", icon: "home" },
           { name: "explore", id: "explore", icon: "explore" },
@@ -185,7 +206,7 @@ function TabBar({ visible }) {
           <TabBarItem key={i} name={tab.name} id={tab.id}>
             {({ focused, pressed, hovered }) => (
               <TabBarIcon
-                color="black"
+                color={selectedTheme.iconColors }
                 style={[
                   {
                     paddingHorizontal: 8,
@@ -198,10 +219,12 @@ function TabBar({ visible }) {
                   pressed && {
                     transform: [{ scale: 0.9 }],
                     opacity: 0.8,
+                    
                   },
                 ]}
                 name={tab.icon as IconName}
                 focused={focused}
+                
               />
             )}
           </TabBarItem>
@@ -233,6 +256,9 @@ function TabBarItem({
 }) {
   const focused = useIsTabSelected(id);
 
+  
+
+
   if (name.startsWith("/") || name.startsWith(".")) {
     return (
       <Link href={name} asChild style={style}>
@@ -259,6 +285,9 @@ function SideBarTabItem({
 }) {
   const isLarge = useWidth(980);
 
+  const theme = useAppSelector(state => state.themeSlice.theme);
+  const selectedTheme = theme === 'dark' ? Colors.dark : Colors.light;
+  
   return (
     <TabBarItem
       name={name}
@@ -295,14 +324,14 @@ function SideBarTabItem({
           >
             {icon({
               focused,
-              color: "#000",
+              color: selectedTheme.iconColors,
             })}
           </View>
 
           <Text
             style={[
               {
-                color: "#000",
+                color: selectedTheme.text,
                 fontSize: 16,
                 marginLeft: 16,
                 marginRight: 16,
@@ -330,12 +359,16 @@ function SideBarTabItem({
 export function ResponsiveNavigator() {
   const isRowLayout = useWidth(768);
 
+  const theme = useAppSelector(state => state.themeSlice.theme);
+  const selectedTheme = theme === 'dark' ? Colors.dark : Colors.light;
+  
+  
   return (
     <TabbedNavigator
       screenOptions={{
         tabBarShowLabel: false,
         headerShown: false,
-        tabBarActiveTintColor: "black",
+        tabBarActiveTintColor: selectedTheme.iconColors,
       }}
     >
       <View
@@ -362,6 +395,10 @@ export function ResponsiveNavigator() {
 function AppHeader({ visible }) {
   const { top } = useSafeAreaInsets();
   const height = 60 + top;
+
+  const theme = useAppSelector(state => state.themeSlice.theme);
+  const selectedTheme = theme === 'dark' ? Colors.dark : Colors.light;
+
   return (
     <>
       <View style={{ height }} />
@@ -374,23 +411,27 @@ function AppHeader({ visible }) {
             web: cns(cssStyles.smallVisible),
           }),
           { height, paddingTop: top },
-          jsStyles.appHeader,
+          jsStyles.appHeader, 
+          { backgroundColor: selectedTheme.backgroundNav },
+          { borderBottomColor: selectedTheme.borderLine }
         ]}
       >
-        <Icon name="logo" fill={Colors.dark} />
+        <Icon name="logo" fill={selectedTheme.iconColors} />
       </View>
     </>
   );
 }
 
-const Colors = {
+const ColorsNav = {
   lightGray: "rgba(230, 230, 230, 1)",
-  dark: "rgba(41, 41, 41, 1)",
+  dark: "rgba(230, 230, 230, 1)",
 };
 
 const NAV_MEDIUM_WIDTH = 244;
 
 const jsStyles = StyleSheet.create({
+
+  
   sideBar: {
     minWidth: 72,
     width: 72,
@@ -401,7 +442,7 @@ const jsStyles = StyleSheet.create({
     maxHeight: "100%",
     alignItems: "stretch",
     borderRightWidth: 1,
-    borderRightColor: Colors.lightGray,
+    // borderRightColor: ColorsNav.lightGray,
     minWidth: 72,
     width: 72,
     paddingTop: 8,
@@ -419,9 +460,9 @@ const jsStyles = StyleSheet.create({
     paddingHorizontal: 16,
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "space-between",
+    justifyConteborderBottomColornt: "space-between",
     borderBottomWidth: 1,
-    borderBottomColor: Colors.lightGray,
+    //: ColorsNav.lightGray,
   },
   sidebarInner2: {
     flex: 1,
@@ -441,7 +482,7 @@ const jsStyles = StyleSheet.create({
   nav: {
     flexDirection: "row",
     borderTopWidth: 1,
-    borderTopColor: Colors.lightGray,
+    //borderTopColor: ColorsNav.lightGray,
     justifyContent: "space-around",
     alignItems: "center",
     height: 49,
