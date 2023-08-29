@@ -10,10 +10,10 @@
 </p>
 
 <p align="center">
-  <a aria-label="try expo with snack" href="https://github.com/bolshiyanov/expo-router-v2-step5"><b>Go back to 5 step</b></a>
- | <a aria-label="try expo with snack" href="https://expo-router-v2-step-by-step6.netlify.app/"><b>Look web site for 6 step</b></a>
+  <a aria-label="try expo with snack" href="https://github.com/bolshiyanov/expo-router-v2-step6"><b>Go back to 6 step</b></a>
+ | <a aria-label="try expo with snack" href="https://expo-router-v2-step-by-step7.netlify.app/"><b>Look web site for 7 step</b></a>
  |
-  <a aria-label="Redux toolkil for expo-router v2 with typeScript" href="https://github.com/bolshiyanov/expo-router-v2-step6">Next 7 step 📚</a>
+  <a aria-label="Redux toolkil for expo-router v2 with typeScript" href="https://github.com/bolshiyanov/expo-router-v2-step8">Next 8 step 📚</a>
 </p>
 <img align="center" alt="Start template navigators Expo-Router v2" height="80%" src="./assets/images/git/Scr1111.png">
 ---
