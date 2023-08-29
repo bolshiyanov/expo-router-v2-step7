@@ -4,7 +4,7 @@
     <img alt="expo sdk" height="128" src="./assets/images/banner.png">
     <h1 align="center">Expo Router v2 </h1>
     <h2 align="center">step by step tutorial </h2>
-    <h3>We're integrating Redux Toolkit into our application on Expo Router v2, and we continue step by step to build a constructor for static websites and mobile applications</h3>
+    <h3>Step by step, we continue building a platform for constructing websites and mobile applications. In this step, we will finalize the setup for theme switching</h3>
   </a>
 <h5 align="center"> <a aria-label="expo documentation" href="https://maps.menu">We are revamping this: maps.menu 📚</a></h5>
 </p>
@@ -15,7 +15,7 @@
  |
   <a aria-label="Redux toolkil for expo-router v2 with typeScript" href="https://github.com/bolshiyanov/expo-router-v2-step6">Next 7 step 📚</a>
 </p>
-
+<img align="center" alt="Start template navigators Expo-Router v2" height="80%" src="./assets/images/git/Scr1111.png">
 ---
 
 - [📚 About this step](#-documentation)
@@ -29,7 +29,7 @@
 
 Step by step, we continue crafting a platform where anyone can build a static website for their business and a mobile app using Expo Router v2.
 
-<img align="center" alt="Start template navigators Expo-Router v2" height="80%" src="./assets/images/git/Scr1.png">
+
 
 ## 📚 About this step
 
