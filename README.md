@@ -35,7 +35,7 @@ In the Theme Settings, we employed:
  
 3) Redux Toolkit to disseminate the button's state across all application components.
  
-4) The configColors file to instantly modify color scheme settings throughout all components. Details on this are provided below:
+4) The `Colors.ts` as `Config` file to instantly modify color scheme settings throughout all components. Details on this are provided below:
 
 
 
