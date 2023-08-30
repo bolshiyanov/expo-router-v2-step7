@@ -15,7 +15,7 @@
  |
   <a aria-label="Redux toolkil for expo-router v2 with typeScript" href="https://github.com/bolshiyanov/expo-router-v2-step8">Next 8 step 📚</a>
 </p>
-<img align="center" alt="Start template navigators Expo-Router v2" height="80%" src="./assets/images/git/Scr1111.png">
+<img align="center" alt="Start template navigators Expo-Router v2" height="80%" src="./assets/images/Scr2.png">
 ---
 
 - [📚 About this step](#-documentation)
@@ -42,7 +42,14 @@ In the Theme Settings, we employed:
 ## 📚 About this step
 
 At this step, we will be linking the color configuration file to each component and observe the final outcome.
- 
+
+<img align="center" alt="Start template navigators Expo-Router v2" height="80%" src="./assets/images/Scr1.png">
+
+1) Let's begin by revisiting how our components are aware of whether the theme is `dark` or `ligh`t. To achieve this, we employ the `useAppSelector` hook, which retrieves the state from our `Store`.
+
+(And if you don't recall how the theme ends up in the Store, please refer back to the previous step.)
+
+2) 
 
 ## 🗺  Step-by-Step Guide:<br/>
 
