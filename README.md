@@ -4,7 +4,7 @@
     <img alt="expo sdk" height="128" src="./assets/images/banner.png">
     <h1 align="center">Expo Router v2 </h1>
     <h2 align="center">step by step tutorial </h2>
-    <h3>Step by step, we continue building a platform for constructing websites and mobile applications. In this step, we will finalize the setup for theme switching</h3>
+    <h3>If you're in search of a template for an adaptive static website built with React, featuring search engine optimization and day-night theme switching capabilities, feel free to utilize this open-access source file at absolutely no cost.</h3>
   </a>
 <h5 align="center"> <a aria-label="expo documentation" href="https://maps.menu">We are revamping this: maps.menu 📚</a></h5>
 </p>
