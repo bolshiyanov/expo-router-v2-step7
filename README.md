@@ -11,7 +11,7 @@
 
 <p align="center">
   <a aria-label="try expo with snack" href="https://github.com/bolshiyanov/expo-router-v2-step6"><b>Go back to 6 step</b></a>
- | <a aria-label="try expo with snack" href="https://expo-router-v2-step-by-step7.netlify.app/"><b>Look web site for 7 step</b></a>
+ | <a aria-label="try expo with snack" href="https://expo-router-v2-step-by-step7.vercel.app/"><b>Look web site for 7 step</b></a>
  |
   <a aria-label="Redux toolkil for expo-router v2 with typeScript" href="https://github.com/bolshiyanov/expo-router-v2-step8">Next 8 step 📚</a>
 </p>
