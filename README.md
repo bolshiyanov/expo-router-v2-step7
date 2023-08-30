@@ -25,23 +25,27 @@
 - [💙 The Team](#-the-team)
 - [License](#license)
 
-<h2 align="center">Empowering Smooth State Sharing through Redux Toolkit in the Context of Expo Router V2</h2>
+<h2 align="center">At this stage, we will complete the setup of theme control, enabling you to swiftly create stunning websites and mobile applications. This will empower you to flexibly customize their color schemes.</h2>
 
-Step by step, we continue crafting a platform where anyone can build a static website for their business and a mobile app using Expo Router v2.
+In the Theme Settings, we employed:
+
+1) The useState hook to track the day-night button's state.
+ 
+2) LocalStorage to preserve the theme state within the browser's storage.
+ 
+3) Redux Toolkit to disseminate the button's state across all application components.
+ 
+4) The configColors file to instantly modify color scheme settings throughout all components. Details on this are provided below:
 
 
 
 ## 📚 About this step
 
-Now we'll teach our components to communicate with each other and pass state, so that changes in one component are immediately visible throughout your application. We'll be using Redux Toolkit and specialized TypeScript hooks for state management.
+At this step, we will be linking the color configuration file to each component and observe the final outcome.
  
 
 ## 🗺  Step-by-Step Guide:<br/>
 
-
-<img align="center" alt="Start template navigators Expo-Router v2" height="80%" src="./assets/images/git/Scr1.png">
-
-1) In the terminal run `npm install @reduxjs/toolkit react-redux` for install dependencies 
 
 
 ## 🗺 Stack of this step
