@@ -47,7 +47,7 @@ At this step, we will be linking the color configuration file to each component 
 
 ## 🗺  Step-by-Step Guide:<br/>
 
-1) Let's begin by revisiting how our components are aware of whether the theme is `dark` or `ligh`t. To achieve this, we employ the `useAppSelector` hook, which retrieves the state from our `Store`.
+1) Let's begin by revisiting how our components are aware of whether the theme is `dark` or `light`. To achieve this, we employ the `useAppSelector` hook, which retrieves the state from our `Store`.
 
 (And if you don't recall how the theme ends up in the Store, please refer back to the previous step.)
 
