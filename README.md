@@ -21,7 +21,7 @@
 - [📚 About this step](#-documentation)
 - [🗺 Stack of this step](#-Stack-of-this-step)
 - [🏅 Why expo-router v2](#-Why-expo-router)
-- [❓ FAQ](#-faq)
+- [❓ Task](#-task)
 - [💙 The Team](#-the-team)
 - [License](#license)
 
@@ -45,6 +45,8 @@ At this step, we will be linking the color configuration file to each component 
 
 <img align="center" alt="Start template navigators Expo-Router v2" height="80%" src="./assets/images/Scr1.png">
 
+## 🗺  Step-by-Step Guide:<br/>
+
 1) Let's begin by revisiting how our components are aware of whether the theme is `dark` or `ligh`t. To achieve this, we employ the `useAppSelector` hook, which retrieves the state from our `Store`.
 
 (And if you don't recall how the theme ends up in the Store, please refer back to the previous step.)
@@ -55,21 +57,13 @@ At this step, we will be linking the color configuration file to each component 
 
 Now, we can import this file into any component.
 
+<img align="center" alt="Start template navigators Expo-Router v2" height="80%" src="./assets/images/Scr4.png">
 
+At this stage, we've developed a straightforward mechanism to switch themes and configure their color schemes. However, currently, we only have two predefined models. In the future, we will introduce a control panel for this project. In one of the upcoming steps, we will learn to create and save custom color schemes. We'll expand our approach to include gradients and animations. So, keep following this tutorial step by step to learn more about Expo Router 2 and its capabilities.
 
-## 🗺  Step-by-Step Guide:<br/>
+## ❓ Task
 
-Content on this page will be added 30-8-2023
-
-Content on this page will be added 30-8-2023
-
-Content on this page will be added 30-8-2023
-
-Content on this page will be added 30-8-2023
-
-Content on this page will be added 30-8-2023
-
-Content on this page will be added 30-8-2023
+Create a custom color scheme for your application. Modify the settings in the `Colors.ts` file.
 
 ## 🗺 Stack of this step
 `new`
