@@ -61,6 +61,14 @@ Now, we can import this file into any component.
 
 At this stage, we've developed a straightforward mechanism to switch themes and configure their color schemes. However, currently, we only have two predefined models. In the future, we will introduce a control panel for this project. In one of the upcoming steps, we will learn to create and save custom color schemes. We'll expand our approach to include gradients and animations. So, keep following this tutorial step by step to learn more about Expo Router 2 and its capabilities.
 
+ <h2 align="center">Next step  </h2>
+
+In the next step, we will make our website multilingual and implement automatic and manual language switching
+
+We will incorporate 10 popular languages and delve into the search engine optimization aspects of multilingual websites.
+
+We'll explore the various types of optimization strategies available, discuss the differences between multilingual and multi-regional SEO, and examine the tools and techniques used for promoting websites in multiple languages and regions.
+
 ## ❓ Task
 
 Create a custom color scheme for your application. Modify the settings in the `Colors.ts` file.
