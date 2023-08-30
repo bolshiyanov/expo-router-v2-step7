@@ -46,7 +46,17 @@ At this step, we will be linking the color configuration file to each component 
 
 ## 🗺  Step-by-Step Guide:<br/>
 
+Content on this page will be added 30-8-2023
 
+Content on this page will be added 30-8-2023
+
+Content on this page will be added 30-8-2023
+
+Content on this page will be added 30-8-2023
+
+Content on this page will be added 30-8-2023
+
+Content on this page will be added 30-8-2023
 
 ## 🗺 Stack of this step
 `new`
