@@ -49,7 +49,13 @@ At this step, we will be linking the color configuration file to each component 
 
 (And if you don't recall how the theme ends up in the Store, please refer back to the previous step.)
 
-2) 
+<img align="center" alt="Start template navigators Expo-Router v2" height="80%" src="./assets/images/Scr3.png">
+
+2) In order to be able to swiftly modify the style across all components whenever necessary, let's create a dedicated file where we will define all the settings for both the dark and light themes. We'll name this file `Colors.ts`.
+
+Now, we can import this file into any component.
+
+
 
 ## 🗺  Step-by-Step Guide:<br/>
 
